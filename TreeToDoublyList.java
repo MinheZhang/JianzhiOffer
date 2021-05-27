@@ -24,10 +24,16 @@ class TreeToDoublyList {
     private Node head;
 
     public Node treeToDoublyList(Node root) {
+
+        if (root == null) {
+            return null;
+        }
         this.pre = null;
+        this.head = null;
 
         dfs(root);
         this.head.left = this.pre;
+        this.pre.right = this.head;
         return this.head;
     }
 
